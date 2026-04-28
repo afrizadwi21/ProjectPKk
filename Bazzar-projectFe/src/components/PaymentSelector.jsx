@@ -68,7 +68,7 @@ const PaymentSelector = ({ payMethod, setPayMethod, isDark }) => {
         <div className={`border rounded-3xl p-5 text-center animate-fadeIn transition-colors ${isDark ? 'bg-green-950/20 border-green-900/30 text-green-400' : 'bg-green-50 border-green-200 text-green-700'
           }`}>
           <div className="flex gap-3 items-center justify-center font-bold">
-            <span className="text-2xl">💵</span>
+            <span className="text-2xl"></span>
             <p>Sediakan uang pas saat pesanan kamu datang ya!</p>
           </div>
         </div>
