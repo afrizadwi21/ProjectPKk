@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #E8230A;
+  --color-brand-orange: #FF6B00;
+  --color-brand-gold: #FFD700;
+  --color-brand-dark: #1A0000;
+  --color-brand-light: #FFF5F5;
+
+  --font-anton: "Anton", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes shine {
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+}
+
+@layer base {
+  body {
+    @apply text-brand-dark bg-brand-light;
+  }
+}
+
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@utility animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+@utility animate-shine {
+  animation: shine 1.5s infinite;
+}
+
+@utility animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@utility animate-scaleUp {
+  animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Hide Spinners for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide Spinners for Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@utility glass {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10;
+}
+
+@utility glass-dark {
+  @apply backdrop-blur-xl bg-black/20 border border-white/5;
+}
+
+@utility neo-shadow {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+@utility neo-shadow-red {
+  box-shadow: 0 10px 30px rgba(232, 35, 10, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-brand-red) 20%, transparent);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-red);
+}
